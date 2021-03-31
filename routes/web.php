@@ -81,3 +81,9 @@ Route::get('schema/create-post', function(){
     });
 });
 
+// query **********************************
+
+Route::get('ListPosts', function () {
+    $data=DB::table('posts')->select('title','description')->get();
+    return view('ListPosts',compact('data'));
+});
